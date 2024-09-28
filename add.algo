@@ -1,0 +1,35 @@
+VAR 
+    length_counter = 0
+    word_counter = 0
+    vowel_counter = 0
+    vowels = "aeiouAEIOU"
+    ch = ""
+
+BEGIN
+    WHILE true DO
+        Read(ch);  
+        IF (ch == '.') THEN
+            BREAK
+        ENDIF
+
+        length_counter = length_counter + 1
+        
+        IF (ch == ' ') THEN
+            word_counter = word_counter + 1
+        ENDIF
+        
+        IF (ch IN vowels) THEN
+            vowel_counter = vowel_counter + 1
+        ENDIF
+    ENDWHILE
+
+    
+    IF (length_counter > 0) THEN
+        word_counter = word_counter + 1
+    ENDIF
+
+   
+    Write("Length of the sentence: ", length_counter);
+    Write("Number of words in the sentence: ", word_counter);
+    Write("Number of vowels in the sentence: ", vowel_counter);
+END
